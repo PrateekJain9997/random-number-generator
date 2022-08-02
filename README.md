@@ -7,7 +7,7 @@ $ npm install rng
 ```
 
 ```js
-const rng = require('rng');
+const rng = require('rng_sha256');
 ```
 
 ## Installation
