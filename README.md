@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-$ npm install rng
+$ npm install rng_sha256
 ```
 
 ```js
