@@ -1,0 +1,26 @@
+{
+  "name": "sha256_rng",
+  "version": "1.0.0",
+  "description": "Random numbers generator using sha256.",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8"
+  },
+  "homepage": "https://github.com/PrateekJain9997/random-number-generator.git#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PrateekJain9997/random-number-generator.git"
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "author": {
+    "name": "Prateek Jain",
+    "email": "jain22719@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1"
+  }
+}
