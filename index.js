@@ -70,7 +70,7 @@ function rng (clientSeed, lowestNumber, highestNumber, randomNumbersQuantity) {
 		throw new Error('Please provide valid SHA256 clientSeed.');
 	}
 
-    let randomNumbers = [], cryptoNumber, index = 0, rand, serverSeedHash = createServerSeed();
+    let randomNumbers = [], cryptoNumber, index = 0, rand, baseNumber = Math.pow(2, 52), normalizedNumber, serverSeedHash = createServerSeed();
 	let hash = hashGenerator(clientSeed, serverSeedHash), serverSeeds = [ serverSeedHash ];
 
     for (let i = 0; i < randomNumbersQuantity; i++){
@@ -83,7 +83,8 @@ function rng (clientSeed, lowestNumber, highestNumber, randomNumbersQuantity) {
         }
   
         cryptoNumber = parseInt(hash.substr(index, 13), 16);
-        rand = (cryptoNumber % ( highestNumber - lowestNumber )) + lowestNumber + 1; // plus 1 to include highest number in the range
+        normalizedNumber = cryptoNumber / baseNumber;
+		rand = Math.floor(normalizedNumber * ( highestNumber - lowestNumber )) + lowestNumber;
 
         randomNumbers.push(rand);
         index = index + 13;
